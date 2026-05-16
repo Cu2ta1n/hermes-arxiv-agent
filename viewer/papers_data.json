@@ -1,10 +1,38 @@
 {
-  "count": 291,
+  "count": 293,
   "crawled_date_min": "2026-04-15",
-  "crawled_date_max": "2026-05-15",
+  "crawled_date_max": "2026-05-16",
   "published_date_min": "2026-01-16",
-  "published_date_max": "2026-05-13",
+  "published_date_max": "2026-05-14",
   "papers": [
+    {
+      "arxiv_id": "2605.14929",
+      "title": "A Hardware-Aware, Per-Layer Methodology for Post-Training Quantization of Large Language Models",
+      "authors": "Earl Killian",
+      "affiliations": "Aril Computer",
+      "published_date": "2026-05-14",
+      "categories": "cs.LG, cs.AR",
+      "abstract": "Scaled Outer Product (SOP) is a post-training quantization methodology for large language model weights, designed to deliver near-lossless fidelity at 4.5--6 bits per weight on hardware with per-layer LUT decode. The methodology combines per-layer search of fixed and dynamic codebook pairs selected by a per-block selection bit, signed per-block scales, activation-weighted cosine selection, and multiple-choice knapsack promotion of sensitive layers with outlier and sparse-residual correction. Fixed codebooks include NF4, BOF4, Split87, and SH4; per-layer optimized codebooks (DD4) are hosted in LUT SRAM. A new hardware-efficient LUT output format (HIF) is proposed to improve performance, energy, and cost. Across six open model families, the recommended FP6 operating point (E2M3sUE4M4, 6.5 bpw) achieves lower weight reconstruction error than the conventional per-layer-POT FP8 baseline (E4M3, 8.0 bpw) at 1.5 bpw lower storage cost, demonstrating that block-scaled small atoms with carefully chosen scale precision can replace conventionally-deployed FP8. Full evaluation across the 4.5--6 bpw range, including layer promotion and sparse residual correction, is reported in a companion paper.",
+      "summary_cn": "提出缩放外积（SOP）后训练量化方法，针对大语言模型权重在支持逐层LUT解码的硬件上实现4.5-6比特近无损精度。方法融合逐层码本对搜索、有符号块尺度、激活加权余弦选择和多重背包敏感层提升，设计新硬件高效LUT输出格式（HIF）。在六个开源模型上验证，FP6（6.5 bpw）重构误差低于FP8（8.0 bpw）且存储成本降低1.5 bpw。",
+      "pdf_filename": "2605.14929.pdf",
+      "crawled_date": "2026-05-16",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.14929"
+    },
+    {
+      "arxiv_id": "2605.13907",
+      "title": "AIS: Adaptive Importance Sampling for Quantized RL",
+      "authors": "Jiajun Zhou, Wei Shao, Lingchao Zheng, Yuwei Fan, Ngai Wong",
+      "affiliations": "Huawei; The University of Hong Kong",
+      "published_date": "2026-05-13",
+      "categories": "stat.ML, cs.AI, cs.LG",
+      "abstract": "Reinforcement learning (RL) for large language models (LLMs) is dominated by the cost of rollout generation, which has motivated the use of low-precision rollouts (e.g., FP8) paired with a BF16 trainer to improve throughput and reduce memory pressure. This introduces a rollout-training mismatch that biases the policy gradient and can cause training to collapse outright on reasoning benchmarks. We show that the mismatch is non-stationary and acts as a double-edged sword: early in training it provides a stochastic exploration bonus, exposing the gradient to trajectories the trainer would otherwise under-sample, but the same perturbation transitions into a destabilizing source of bias as the policy concentrates.   To solve this, we propose Adaptive Importance Sampling (AIS), a correction framework that adjusts the strength of its intervention on a per-batch basis. AIS combines three real-time diagnostics, namely weight reliability, divergence severity, and variance amplification, into a single mixing coefficient that interpolates between the uncorrected and fully importance-weighted gradients, suppressing the destabilizing component of the mismatch while preserving its exploratory benefit. We integrate AIS into GRPO and evaluate it on the diffusion-based LLaDA-8B-Instruct and the autoregressive Qwen3-8B and Qwen3.5-9B across mathematical reasoning and planning benchmarks. AIS matches the BF16 baseline on most tasks while retaining the 1.5 to 2.76x rollout speedup of FP8.",
+      "summary_cn": "大语言模型RL训练中FP8低精度rollout与BF16训练器存在精度不匹配，早期促进探索但后期破坏稳定。本文提出自适应重要性采样（AIS），通过权重可靠性、发散严重性和方差放大三项实时诊断动态调节梯度校正强度，在保留FP8约1.5-2.76倍加速的同时恢复BF16基线准确率，在LLaDA-8B和Qwen3-8B等模型上验证有效。",
+      "pdf_filename": "2605.13907.pdf",
+      "crawled_date": "2026-05-16",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.13907"
+    },
     {
       "arxiv_id": "2605.13915",
       "title": "Multi-Scale Dequant: Eliminating Dequantization Bottleneck via Activation Decomposition for Efficient LLM Inference",
