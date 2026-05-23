@@ -1,10 +1,38 @@
 {
-  "count": 310,
+  "count": 312,
   "crawled_date_min": "2026-04-15",
-  "crawled_date_max": "2026-05-21",
+  "crawled_date_max": "2026-05-23",
   "published_date_min": "2026-01-16",
-  "published_date_max": "2026-05-19",
+  "published_date_max": "2026-05-21",
   "papers": [
+    {
+      "arxiv_id": "2605.22487",
+      "title": "Polite on the Surface, Wrong in Practice: A Curated Dataset for Fixing Honorific Failures in Multilingual Bangla Generation",
+      "authors": "Md. Asaduzzaman Shuvo, Mahedi Hasan, Md. Tashin Parvez, Azizul Haque Noman, Md. Shafayet Hossain Ovi",
+      "affiliations": "United International University, Bangladesh",
+      "published_date": "2026-05-21",
+      "categories": "cs.CL",
+      "abstract": "Recent advances in Multilingual Large Language Models (MLLMs) have significantly enhanced cross-lingual conversational capabilities, yet modeling culturally nuanced and context-dependent communication remains a critical bottleneck. Specifically, existing state-of-the-art models exhibit a severe pragmatic gap when handling structural variations, regional idioms, and honorific consistencies in low-resource contexts like Bangla. To address this limitation, we introduce a novel, culturally aligned instruction-tuning dataset for \\textbf{BangLa Application and DialoguE generation - BLADE} and benchmarking framework comprising $4,196$ meticulously curated interaction pairs. We leverage this resource to systematically fine-tune and evaluate leading open-weight architectures, including DeepSeek-8B and LLaMA-3.2-3B, utilizing parameter-efficient fine-tuning via LoRA adapters in a 4-bit NormalFloat (NF4) quantization framework. Our empirical evaluations demonstrate that models fine-tuned on our dataset yield substantial improvements in structural fidelity and honorific alignment, providing a rigorous benchmark for bridging pragmatic disparities in low-resource multilingual text generation. Code and dataset: https://github.com/ashuvo25/Bangla_Application_LLM/tree/main",
+      "summary_cn": "针对孟加拉语大模型在敬语使用和文化适配上的不足，构建BLADE指令微调数据集（4196对，覆盖2008个主题），涵盖教育、职业、日常等场景。用4位量化LoRA微调DeepSeek-8B与LLaMA-3.2-3B，在结构保真度和敬语一致性上显著提升，BLEU达17.73，专家评分超4.6/5。",
+      "pdf_filename": "2605.22487.pdf",
+      "crawled_date": "2026-05-23",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.22487"
+    },
+    {
+      "arxiv_id": "2605.21539",
+      "title": "DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models",
+      "authors": "Xuyang Zhong, Qizhang Li, Yiwen Guo, Chen Liu",
+      "affiliations": "Department of Computer Science, City University of Hong Kong; Independent Researcher",
+      "published_date": "2026-05-20",
+      "categories": "cs.LG",
+      "abstract": "We propose DualOptim+, a novel optimization framework for improving machine unlearning in large language models. It introduces a base state to capture common representations shared by forgetting and retaining objectives and delta states to preserve objective-specific residuals. This architecture allows the optimizer to adaptively bridge shared and decoupled states based on the directional conflict between forgetting and retaining gradients. We further introduce DualOptim+ 8bit, a quantized variant that reduces memory overhead without compromising performance. Extensive experiments across fictitious and real-world unlearning, safety alignment, and multi-task learning tasks demonstrate that DualOptim+ consistently achieves a superior trade-off between different objectives. Codes are available at https://github.com/CityU-MLO/DualOptimPlus.",
+      "summary_cn": "提出DualOptim+优化框架用于大语言模型机器遗忘，通过共享基态捕获遗忘与保留目标的共同表征、解耦增量态保留目标特定残差，引入8bit量化降低显存开销。实验在多种遗忘和安全对齐任务上取得更优效果与模型效用权衡。",
+      "pdf_filename": "2605.21539.pdf",
+      "crawled_date": "2026-05-23",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.21539"
+    },
     {
       "arxiv_id": "2605.20402",
       "title": "Decomposing MXFP4 quantization error for LLM reinforcement learning: reducible bias, recoverable deadzone, and an irreducible floor",
