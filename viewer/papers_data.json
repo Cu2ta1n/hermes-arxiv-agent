@@ -1,10 +1,24 @@
 {
-  "count": 332,
+  "count": 333,
   "crawled_date_min": "2026-04-15",
-  "crawled_date_max": "2026-05-30",
+  "crawled_date_max": "2026-06-02",
   "published_date_min": "2026-01-16",
-  "published_date_max": "2026-05-28",
+  "published_date_max": "2026-05-29",
   "papers": [
+    {
+      "arxiv_id": "2605.31035",
+      "title": "MixFP4: Enhancing NVFP4 with Adaptive FP4/INT4 Block Representations",
+      "authors": "Jiaxiang Zou, Yonghao Chen, Ruilong Wu, Xinyu Chen",
+      "affiliations": "The Hong Kong University of Science and Technology (Guangzhou), Guangzhou, China",
+      "published_date": "2026-05-29",
+      "categories": "cs.AR",
+      "abstract": "As large language models continue to scale, fine-grained block-scaled low-precision formats such as NVFP4 are increasingly adopted for their substantial throughput and memory benefits. However, a single FP4 micro-format often mismatches heterogeneous block-level tensor statistics. To address this without changing the standard block-scaled MMA/GEMM execution path, we propose MixFP4, a mixed micro-format extension to NVFP4 that selects between two stored FP4 micro-formats (E2M1 and E1M2) per block. MixFP4 reuses NVFP4's scale hierarchy and encodes the format choice with zero additional metadata by repurposing the sign bit of the FP8 E4M3 block scale. By decoding both micro-formats into a unified internal E2M2 compute representation, MixFP4 avoids datapath duplication. Across representative LLM families, MixFP4 improves FP4 quantization robustness and accuracy over NVFP4 baselines with modest tensor-core overhead (3.1\\% area, 1.5\\% power).",
+      "summary_cn": "MixFP4在NVFP4基础上提出混合微格式扩展方案，允许每个块自适应选择E2M1或E1M2两种FP4码本，利用FP8 E4M3缩放因子的符号位零开销编码格式选择。该方法在不改变标准块缩放GEMM执行路径的前提下，有效应对LLM张量不同块的异质分布统计特性。实验表明MixFP4在多种LLM族上提升了FP4量化鲁棒性和精度，仅带来3.1%面积和1.5%功耗的微小张量核心开销。",
+      "pdf_filename": "2605.31035.pdf",
+      "crawled_date": "2026-06-02",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.31035"
+    },
     {
       "arxiv_id": "2605.30014",
       "title": "From GPS Points to Travel Patterns: Flexible and Semantic Trajectory Generation with LLMs",
