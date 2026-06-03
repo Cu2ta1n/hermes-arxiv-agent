@@ -1,10 +1,164 @@
 {
-  "count": 333,
+  "count": 344,
   "crawled_date_min": "2026-04-15",
-  "crawled_date_max": "2026-06-02",
+  "crawled_date_max": "2026-06-03",
   "published_date_min": "2026-01-16",
-  "published_date_max": "2026-05-29",
+  "published_date_max": "2026-06-01",
   "papers": [
+    {
+      "arxiv_id": "2606.02487",
+      "title": "Towards Multidisciplinary Summarization of Hospital Stays: Efficient Sentence-Level Clinical Provenance Categorization",
+      "authors": "Baris Karacan, Vaibhav Bhargava, Barbara Di Eugenio, Natalie Parde, Mary Khetani, Yu-Shan Tseng, Vanessa Barbosa, Julie Vignato, Lindsey Knake, Rajashree Dahal, Emily Spellman, Danielle Hitzel, Janine Petitgout, Kristi Haughey, Amanda Karstens, Brianna Clarahan, Rachel Dawson, Lauren Boyd, Mackenzie Weis, Angie Tipton, Jaewon Bae, Catherine K. Craven, Karen Dunn Lopez, Andrew D. Boyd",
+      "affiliations": "University of Illinois Chicago; University of Iowa; University of Missouri-Columbia",
+      "published_date": "2026-06-01",
+      "categories": "cs.CL",
+      "abstract": "Effective \"all-team\" summarization in high-complexity settings like the Neonatal Intensive Care Unit (NICU) requires aggregating insights from diverse disciplines (physicians, nurses, therapists) spread across hundreds of clinical free-text notes. Simply pooling heterogeneous text often leads to incoherent outputs. Structured summarization therefore first requires accurate categorization of sentence-level provenance across multi-source notes. This pilot study introduces a clinical provenance categorization pipeline using supervised fine-tuning (SFT) of large language models (LLMs). We adapted two Llama-3 models (8B and 70B) to MedSecId, a corpus of 2,002 MIMIC-III (Adult ICU) notes annotated with clinical provenance headers, achieving in-domain Macro F1 scores above 92% for both models. To evaluate cross-domain generalization, we assessed model capacity (8B vs. 70B) and quantization on a gold-standard dataset of 227 sentence-level spans derived from three multi-disciplinary NICU summaries. Experimental results demonstrate a scale-dependent transfer effect: while SFT produced only marginal changes for the 8B model, it substantially improved the 70B model, increasing Macro F1 by 7%. Notably, the quantized fine-tuned 70B model outperformed its full-precision baseline while substantially reducing computational requirements. These findings suggest that sufficient model capacity is critical for preserving semantic flexibility during cross-domain clinical transfer and that efficient quantized adaptation can enable structured provenance modeling for downstream summarization.",
+      "summary_cn": "该试点研究提出用于NICU多学科临床记录摘要的句子级出处分类流水线。将Llama-3模型(8B和70B)微调至MedSecId语料库，域内Macro F1超92%。跨域迁移中70B模型微调后F1提升7%，量化后的微调70B模型甚至超越全精度基线。表明足够的模型容量对保留跨域语义灵活性至关重要。",
+      "pdf_filename": "2606.02487.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.02487"
+    },
+    {
+      "arxiv_id": "2606.02288",
+      "title": "Massive Spikes in LLMs are Bias Vectors: Mechanistic Uncovering and Spike-Free Quantization",
+      "authors": "Yung-Chin Chen, Chung Peng Lee, Ze-Wei Liou, Naveen Verma",
+      "affiliations": "Princeton University; EnCharge AI",
+      "published_date": "2026-06-01",
+      "categories": "cs.LG",
+      "abstract": "Massive activation spikes in Large Language Models (LLMs) severely degrade quantization by stretching dynamic ranges. While prior hypotheses characterize these as high-level scalar biases, we argue that they are merely the scalar intermediates of rigid, structural vector biases in the spike-carrying tokens. We show that these tokens converge to constant vectors after normalization that drive the attention sink and value-state drain mechanisms. We geometrically substantiate this by analyzing the coordination of projection weights: $W_K$ contrastively amplifies the vector, $W_Q$ aligns semantic tokens toward it, and $W_V$ projects it into the spectral null-space. Furthermore, we reveal that the model actively preserves these structural biases against Rotary Positional Embedding (RoPE) perturbations by localizing them in \"zones of rotational stability\" utilizing low-frequency bands and coherent channel pairs. Leveraging this, we propose INSERTQUANT, a post-training quantization (PTQ) framework that clamps spikes and restores their function via pre-computed template vectors. This renders activations strictly spike-free, enabling robust low-bit quantization with high fidelity. INSERTQUANT achieves parity with state-of-the-art per-tensor quantization methods on LLMs and uniquely generalizes beyond text to other modalities such as ViTs.",
+      "summary_cn": "本文发现LLM中巨大激活尖峰本质上是结构化的向量偏置而非标量偏置。从几何角度分析了投影权重的协调机制：WK对比放大、WQ对齐语义标记、WV投影到谱零空间。揭示模型通过低频频段和相干通道对将偏置定位在旋转稳定区以抵抗RoPE扰动。提出INSERTQUANT框架通过夹断尖峰并用预计算模板向量恢复功能实现无尖峰量化。",
+      "pdf_filename": "2606.02288.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.02288"
+    },
+    {
+      "arxiv_id": "2606.0185",
+      "title": "Does Compression Preserve Uncertainty? A Unified Benchmark for Quantized and Sparse LLMs via Conformal Prediction",
+      "authors": "Yujia Tong, Yuxi Wang, Yunyang Wan, Tian Zhang, Junhao Dong, Jingling Yuan",
+      "affiliations": "Wuhan University of Technology; Nanyang Technological University",
+      "published_date": "2026-06-01",
+      "categories": "cs.AI",
+      "abstract": "Model compression techniques such as quantization and pruning are widely used to reduce the deployment cost of large language models (LLMs), with existing evaluations focusing almost exclusively on accuracy preservation. However, in safety-critical applications, a model's ability to reliably quantify its own uncertainty is equally important. We ask: does compression preserve this ability? To answer this question, we benchmark 12 LLMs under various compression configurations across five NLP tasks, using conformal prediction to provide a rigorous, distribution-free measure of uncertainty. Our experiments reveal that: (I) compression frequently decouples accuracy from uncertainty; (II) larger models absorb compression-induced uncertainty far more effectively than smaller ones; and (III) uncertainty inflation is often threshold-like rather than gradual. These results suggest that accuracy-only evaluation is insufficient for assessing the deployment readiness of compressed LLMs, and that uncertainty-aware benchmarking should be a standard component of model compression pipelines.",
+      "summary_cn": "本文首次系统评估压缩是否保留模型的不确定性量化能力。使用共形预测对12种大模型在多种量化剪枝配置和五个NLP任务上进行基准测试。发现压缩经常使准确率与不确定性解耦，大模型吸收压缩引入的不确定性远优于小模型，不确定性膨胀通常是阈值式而非渐进式。表明仅靠准确率评估不足以判断压缩模型的可部署性。",
+      "pdf_filename": "2606.01850.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.0185"
+    },
+    {
+      "arxiv_id": "2606.01556",
+      "title": "TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization",
+      "authors": "Haodong Wang, Junjie Liu, Zicong Hong, Qianli Liu, Jian Lin, Song Guo, Xu Chen",
+      "affiliations": "Department of Computer Science and Engineering, The Hong Kong University of Science and Technology; School of Computer Science and Engineering, Sun Yat-sen University",
+      "published_date": "2026-06-01",
+      "categories": "cs.DC",
+      "abstract": "4-bit quantization reduces the memory footprint and latency of large language model inference, but its aggressive precision reduction can severely degrade accuracy. Prior methods address this by decomposing each weight matrix into two components (e.g., via singular value decomposition) and quantizing them separately, assigning the bulk of values to a low-precision residual component while handling outliers with a high-precision low-rank component. However, such decompositions are designed to minimize the real-valued energy of the residual, rather than the post-quantization error of the residual and low-rank components. We propose TwinQuant, a 4-bit quantization framework that learns quantization-friendly decomposed subspaces and jointly reshapes both the low-rank and residual components. TwinQuant learns component-specific transformations via a joint optimization over the Stiefel and general linear manifolds, flattening their distributions and reducing dynamic-range imbalance. To enable efficient end-to-end execution, we further design a fused dual-component kernel that pipelines the two-stage low-rank computation on-chip and merges both components with a single epilogue, avoiding intermediate global-memory traffic. Across LLaMA3 and Qwen3 models, TwinQuant preserves near-FP16 accuracy and delivers up to $1.8\\times$ end-to-end speedup over an FP16 baseline.",
+      "summary_cn": "TwinQuant学习对量化友好的子空间分解用于4位大模型量化。通过Stiefel流形和一般线性流形上的联合优化学习组件特定变换，展平分布并减少动态范围不均衡。同时设计融合双组件内核，将两阶段低秩计算管线化到片上，避免中间全局访存。在LLaMA3和Qwen3上保持接近FP16的准确率，端到端加速1.8倍。",
+      "pdf_filename": "2606.01556.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.01556"
+    },
+    {
+      "arxiv_id": "2606.01412",
+      "title": "GPTQ-intrinsic LoRA: A Near-optimal Algorithm for Low-precision Quantization with Low-rank Adaptation",
+      "authors": "Shihao Zhang, Rayan Saab",
+      "affiliations": "Department of Mathematics, University of California San Diego; Halicioglu Data Science Institute, University of California San Diego",
+      "published_date": "2026-05-31",
+      "categories": "cs.LG, cs.IT",
+      "abstract": "Post-training quantization is widely used for compressing large neural networks, but aggressive low-bit quantization can significantly degrade model quality. A common remedy is to augment the quantized weights with a low-rank correction, leading to approximations of the form $W\\approx Q+LR$. In this paper, we study this low-precision plus low-rank representation through the layer-wise reconstruction objective $\\|XW-X(Q+LR)\\|_F^2$, where $X$ is a calibration matrix. We establish, to our knowledge, the first information-theoretic lower bounds for this problem under finite-alphabet and bounded low-rank compensation constraints. We then propose GPTQ-intrinsic LoRA, a training-free algorithm that incorporates the low-rank correction directly into a GPTQ-style quantization pass by appropriately augmenting the calibration Hessian. For the choice $L=V_r$, where $V_r$ contains the top right singular vectors of $X$, we prove layer-wise reconstruction error bounds in which the usual GPTQ dependence on $\\|X\\|_F^2$ is replaced by the rank-$r$ residual $\\|X-X_r\\|_F^2$, up to regularization terms. Under natural structural assumptions, these bounds match the information-theoretic lower bounds in their dominant scaling, up to constants and mild factors. We also introduce Bid-Up, a fixed-grid quantization refinement step that can be alternated with optimal low-rank compensation with guaranteed non-increasing layer-wise reconstruction error. Experiments on Qwen3 language models and DeiT vision transformers show that GPTQ-intrinsic LoRA improves over GPTQ and GPTQ followed by low-rank compensation, with additional gains from refinement loops.",
+      "summary_cn": "本文首次建立了低精度加低秩表示的信息论下界。提出GPTQ-intrinsic LoRA，将低秩校正直接融入GPTQ风格量化流程的免训练算法，通过增广校准Hessian矩阵实现。理论上证明了层重建误差上界中GPTQ对校准矩阵范数的依赖可替换为秩r残差。还引入Bid-Up量化细化步骤，在Qwen3和DeiT上优于现有方法。",
+      "pdf_filename": "2606.01412.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.01412"
+    },
+    {
+      "arxiv_id": "2606.00573",
+      "title": "LASER: Loss-Aware Singular-value Decomposition and Rank Allocation for Efficient Low-Precision Vision-Language Models",
+      "authors": "Haiyu Wang, Yutong Wang, Leshu Li, Yihui Ren, Sai Qian Zhang",
+      "affiliations": "Tandon School of Engineering, New York University; Courant Institute of Mathematical Sciences, New York University; Brookhaven National Laboratory",
+      "published_date": "2026-05-30",
+      "categories": "cs.LG",
+      "abstract": "Vision-language models (VLMs) deliver strong multimodal reasoning capabilities, but their large computational cost and high parameter counts make deployment challenging on resource-constrained devices. Low-rank decomposition has emerged as a promising compression technique, yet existing methods often optimize local matrix reconstruction error, rely on uniform or heuristic rank allocation, and focus mainly on attention projections while leaving feed-forward networks underexplored. In this paper, we propose~\\textit{LASER} (\\textbf{L}oss-\\textbf{A}ware \\textbf{S}ingular-value d\\textbf{E}composition and \\textbf{R}ank allocation), a low-rank compression framework for efficient low-precision VLM inference. LASER derives a curvature-weighted SVD objective from a second-order approximation of the model loss and uses Kronecker-factored Fisher information to guide decomposition toward downstream performance rather than reconstruction alone. We further introduce a loss-aware cross-layer rank allocation strategy based on calibration gradients, enabling more effective parameter budgeting across layers. Finally, we extend low-rank compression to FFN layers through a hybrid scheme that combines SVD with quantization. The evaluation results show that LASER achieves more than $2.3\\times$ decoding speedup over previous work while preserving strong accuracy under low-precision inference.",
+      "summary_cn": "LASER提出面向低精度视觉语言模型推理的低秩压缩框架。从模型损失的二阶近似推导曲率加权SVD目标，利用Kronecker因子Fisher信息引导分解以优化下游任务性能，并引入基于校准梯度的跨层秩分配策略。还将低秩压缩扩展到前馈网络层，结合SVD与量化的混合方案，实现2.3倍以上的解码加速。",
+      "pdf_filename": "2606.00573.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.00573"
+    },
+    {
+      "arxiv_id": "2606.00539",
+      "title": "GNMR: Runtime Stability Control for Low-Precision Large Language Model Training",
+      "authors": "Boao Kong, Weichen Jia, Engao Zhang, Guohong Li, Yonghan Dong, Yao Wang, Yaoyuan Wang, Yunke Peng, Kun Yuan",
+      "affiliations": "Peking University; Huawei Technologies Ltd.",
+      "published_date": "2026-05-30",
+      "categories": "cs.LG, math.OC, stat.ML",
+      "abstract": "Training stability is a key bottleneck in low-precision language model training: efficient low-cost paths can still produce short-lived numerical risks at a small set of operators. We formulate this as runtime stability control and present Gradient Norm-to-Mean Ratio (GNMR), a lightweight controller that compares each recoverable unit's current gradient norm with its historical mean. Together with $Δ$-GNMR for abrupt short-window increases, GNMR maps local risk signals to bounded recovery actions under a hard $\\mathrm{maxO}$ budget and a short lock interval, without changing the numerical format, kernel, or backend recipe. Across activation-quantization stress, DeepSeek-style recipe-level training, and LLaMA-2 13B fine-tuning, GNMR preserves high-fidelity quality with sparse, budgeted recovery. These results support GNMR as a backend-agnostic controller to improve low-precision training stability while preserving low-cost execution.",
+      "summary_cn": "GNMR提出梯度范数与均值比这一轻量级控制器来解决低精度语言模型训练中的稳定性瓶颈。该方法将每个可恢复单元的当前梯度范数与历史均值比较，结合Delta-GNMR捕捉短窗口内的突变，在固定最大操作预算和短锁定间隔内将局部风险信号映射到受控恢复动作。在激活量化压力测试和DeepSeek式训练及LLaMA-2 13B微调中都保持了高保真质量。",
+      "pdf_filename": "2606.00539.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.00539"
+    },
+    {
+      "arxiv_id": "2606.00494",
+      "title": "ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression",
+      "authors": "Wneya Yu, Chao Zhang, Li Wang, Samson Lasaulce, Merouane Debbah",
+      "affiliations": "School of Mathematics and Statistics, Central South University; Department of Computer Science, Central South University; CRAN, Universite de Lorraine, CNRS; 6G Research Center, Khalifa University",
+      "published_date": "2026-05-30",
+      "categories": "cs.LG",
+      "abstract": "Post-Training Quantization (PTQ) and Low-Rank Adaptation (LoRA) constitute the standard pipeline for efficient Large Language Model (LLM) deployment. However, applying them sequentially poses a problem: PTQ often leaves behind random noise that is spread out (across the model's weights) in a way LoRA can't easily fix, meaning that LoRA ends up wasting its limited capacity trying to fix uncorrectable noise instead of improving task performance. In this paper, we propose \\textbf{ProjQ}, a novel framework for constraining quantization noise to the low-rank manifold via orthogonal subspace projection. We derive an efficient alternating algorithm that shapes the quantization noise into a low-rank structure, effectively offloading dominant error components to the subsequent adapter while minimizing the residual error in the orthogonal \"uncorrectable\" subspace. Our theoretical analysis demonstrates that ProjQ preserves strictly greater model plasticity for downstream tasks compared to standard PTQ. Extensive experiments on LLaMA-2, Qwen2.5 and Qwen3 confirm that ProjQ consistently outperforms existing methods in both quantization error compensation and downstream task fine-tuning, achieving up to $2\\times$ lower evaluation loss for compensation and matching the performance of standard 4-bit baselines on language modeling tasks with only 3 bits. The code is available on https://github.com/yy9301/ProjQ .",
+      "summary_cn": "ProjQ提出正交子空间投影框架将量化噪声约束到低秩流形上。通过交替优化算法将量化噪声塑造成低秩结构，将主要误差分量卸载到后续LoRA适配器处理，同时最小化正交不可修正子空间中的残余误差。实验表明ProjQ持续优于现有方法，以3位精度匹配标准4位基线的语言建模性能，评估损失降低2倍。",
+      "pdf_filename": "2606.00494.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.00494"
+    },
+    {
+      "arxiv_id": "2606.00365",
+      "title": "SPARQLe: Sub-Precision Activation Representation for Quantized LLM Inference",
+      "authors": "Aradhana Mohan Parvathy, Soumendu Kumar Ghosh, Shamik Kundu, Arnab Raha, Souvik Kundu, Deepak A. Mathaikutty, Anand Raghunathan",
+      "affiliations": "Purdue University; Intel Corporation",
+      "published_date": "2026-05-29",
+      "categories": "cs.AR",
+      "abstract": "The rapid growth in sizes of Large language models (LLMs) results in high compute and memory costs during inference. Quantization has been a significant pathway to addressing this challenge. In the quest to push the limits of quantization, weights, which are static, can often be quantized aggressively (e.g. 4 bits), while activations often require higher precision (e.g., 8 bits) to preserve accuracy, forcing hardware to operate with higher-precision datapaths. We leverage the statistical property that a significant fraction of activations are concentrated around zero, resulting in sparsity in the higher-order bits. Our proposal, SPARQLe, is a hardware-software co-design framework that exploits this sub-precision redundancy in any given quantized model. SPARQLe represents each 2k-bit activation tensor as a dense k-bit LSB tensor and a sparse k-bit MSB tensor compressed with a precision bitmap, and proposes a lightweight algorithm to increase MSB sparsity. SPARQLe reduces activation memory traffic and enables efficient computation on k-bit datapaths while preserving 2k-bit activation accuracy. SPARQLe includes an accelerator that operates directly on this hybrid format with minimal control overheads. Across the BitNet 3B, Llama2 7B, and Llama3 8B models, SPARQLe reduces prefill latency by 16-24.3% and decode latency by 13.5-23.4%, with 17-26.7% and 6.5-14.2% lower prefill and decode energy, respectively. SPARQLe demonstrates that sub-precision activation sparsity offers an effective and complementary pathway towards efficient LLM inference.",
+      "summary_cn": "SPARQLe利用激活值在零附近集中的统计特性，提出软硬件协同设计框架来挖掘量化模型中的亚精度冗余。将2k位激活张量表示为密集的k位LSB张量和通过精度位图压缩的稀疏k位MSB张量，并在k位数据通路实现高效计算。在BitNet 3B和Llama2 7B与Llama3 8B上，预填充延迟降低16-24.3%，解码延迟降低13.5-23.4%。",
+      "pdf_filename": "2606.00365.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.00365"
+    },
+    {
+      "arxiv_id": "2606.00206",
+      "title": "Quantized Reasoning Models Think They Need to Think Longer, but They Do Not",
+      "authors": "Sanae Lotfi, Polina Kirichenko, Steven Li, Zechun Liu",
+      "affiliations": "FAIR at Meta; Meta AI",
+      "published_date": "2026-05-29",
+      "categories": "cs.LG",
+      "abstract": "Post-training quantization (PTQ) is widely used to deploy large language models efficiently, but its effect on reasoning models is not well understood. Across math, coding, and science QA, we find that aggressive PTQ reduces accuracy while increasing chain-of-thought (CoT) length. Surprisingly, we show that in up to 52% of the quantized models' failures, models reach the right answer in intermediate reasoning steps but do not output it as a final answer. To understand why quantization leads to this increase in overthinking errors, we measure the token-level KL divergence between quantized and full-precision output distributions. Positions with high KL divergence correlate strongly with high next-token entropy, and at these positions quantized models disproportionately sample overthinking markers such as \"wait\", \"but\", and \"alternatively\". We show that simply introducing a training-free logit penalty on a curated set of overthinking markers can reduce CoT length by 12--23% while preserving or improving accuracy across 5 models (1.5B-32B parameters), 3 quantization methods, and 5 benchmarks, yielding a favorable Pareto frontier of accuracy against reasoning cost compared to penalizing other token sets. Overthinking errors produced by quantized models are particularly reduced by up to 58%.",
+      "summary_cn": "研究发现激进的训练后量化在降低推理模型准确率的同时会增加思维链长度。高达52%的量化模型失败案例中，模型在中间推理步骤中已得出正确答案但未输出为最终答案。通过分析标记级KL散度，发现量化模型在高熵位置过度采样等待和但是等过度思考标记。引入无训练的对数惩罚可将思维链缩短12-23%并保持或提升准确率。",
+      "pdf_filename": "2606.00206.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.00206"
+    },
+    {
+      "arxiv_id": "2606.00079",
+      "title": "BitsMoE: Efficient Spectral Energy-Guided Bit Allocation for MoE LLM Quantization",
+      "authors": "Jiayu Zhao, Zihan Teng, Minhao Fan, Tianrui Ma, Wentao Ren, Song Chen, Weichen Liu",
+      "affiliations": "School of Microelectronics, University of Science and Technology of China; College of Computing and Data Science, Nanyang Technological University; School of Electrical and Electronic Engineering, Nanyang Technological University",
+      "published_date": "2026-05-22",
+      "categories": "cs.LG, cs.AI",
+      "abstract": "Mixture-of-Experts (MoE) large language models reduce per-token computation through sparse expert activation, but their deployment remains memory-intensive because all expert weights must be kept resident in memory. Existing MoE compression methods struggle in the ultra-low-bit regime: pruning irreversibly removes model capacity, while coarse-grained quantization fails to allocate bits according to heterogeneous expert and weight-direction importance. We propose BitsMoE, a spectral-energy-guided bit-allocation framework for MoE LLM quantization. BitsMoE decomposes each MoE layer by SVD into a shared basis and expert-specific spectral factors, retaining the shared basis without quantization to preserve common cross-expert structure and using the expert-specific factors as fine-grained quantization units. To determine the bit-width of each unit, BitsMoE formulates spectrum-wise mixed-precision quantization as an activation-aware reconstruction surrogate and solves an integer linear program that minimizes estimated reconstruction loss under a fixed bit budget. Experiments across multiple MoE LLMs show that BitsMoE substantially reduces downstream task accuracy degradation in ultra-low-bit regimes. Under 2-bit quantization on Qwen3-30B-A3B-Base, BitsMoE accelerates quantization by 12.3$\\times$, improves average accuracy by 27.83 percentage points, and increases decoding speed by 1.76$\\times$ over GPTQ. Our model and code are publicly available at https://github.com/zjiayu064/BitsMoE.",
+      "summary_cn": "BitsMoE提出基于谱能量引导的混合精度位分配框架用于MoE大模型量化。该方法通过SVD将每层分解为共享基和专家谱因子，将共享基保留不量化，对专家因子进行细粒度量化，并构建整数线性规划在固定位预算下最小化重建损失。在2位量化Qwen3-30B-A3B上，相比GPTQ加速12.3倍、准确率提升27.83个百分点、解码速度1.76倍。",
+      "pdf_filename": "2606.00079.pdf",
+      "crawled_date": "2026-06-03",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.00079"
+    },
     {
       "arxiv_id": "2605.31035",
       "title": "MixFP4: Enhancing NVFP4 with Adaptive FP4/INT4 Block Representations",
@@ -90,7 +244,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.29396"
     },
     {
-      "arxiv_id": "2605.28890",
+      "arxiv_id": "2605.2889",
       "title": "Echoes within the Reasoning: Stealthy and Effective Watermarking via Chain of Thought",
       "authors": "Jiacheng Lu, Yiming Li, Tao Song, Weijian Wang, Wenjie Qu, Haibing Guan, Jiaheng Zhang",
       "affiliations": "Shanghai Jiao Tong University; Nanyang Technological University; National University of Singapore",
@@ -101,7 +255,7 @@
       "pdf_filename": "2605.28890.pdf",
       "crawled_date": "2026-05-29",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.28890"
+      "pdf_url": "https://arxiv.org/pdf/2605.2889"
     },
     {
       "arxiv_id": "2605.27646",
@@ -160,7 +314,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.27358"
     },
     {
-      "arxiv_id": "2605.26660",
+      "arxiv_id": "2605.2666",
       "title": "WINDQuant: Weight-Informed Neural Decision-Making for Global Mixed-Precision LLM Quantization",
       "authors": "Phong Nam Huu Nguyen, Khoi M. Le, Cong-Duy T Nguyen, Anh Tuan Luu, Thong Thanh Nguyen, Tho Quan",
       "affiliations": "CAIR, VinUniversity, Vietnam; Ho Chi Minh City University of Technology (HCMUT), VNU-HCM, Vietnam; CCDS, Nanyang Technological University, Singapore",
@@ -171,7 +325,7 @@
       "pdf_filename": "2605.26660.pdf",
       "crawled_date": "2026-05-28",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.26660"
+      "pdf_url": "https://arxiv.org/pdf/2605.2666"
     },
     {
       "arxiv_id": "2605.26175",
@@ -202,7 +356,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.26092"
     },
     {
-      "arxiv_id": "2605.25880",
+      "arxiv_id": "2605.2588",
       "title": "The Quantization Benefits of Residual-Free Transformers",
       "authors": "Yiping Ji, Mahalakshmi Sabanayagam, Peyman Moghadam, Hemanth Saratchandran, Simon Lucey",
       "affiliations": "Australian Institute for Machine Learning, Adelaide University; DATA61, CSIRO",
@@ -213,7 +367,7 @@
       "pdf_filename": "2605.25880.pdf",
       "crawled_date": "2026-05-28",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.25880"
+      "pdf_url": "https://arxiv.org/pdf/2605.2588"
     },
     {
       "arxiv_id": "2605.24144",
@@ -426,7 +580,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.19561"
     },
     {
-      "arxiv_id": "2605.18800",
+      "arxiv_id": "2605.188",
       "title": "Theory-optimal Quantization Based on Flatness",
       "authors": "Xiusheng Huang, Zhe Li, Xuanwu Yin, Lu Wang, Yequan Wang, Dong Li, Emad Barsoum, Kang Liu",
       "affiliations": "中国科学院自动化研究所复杂系统认知与决策智能重点实验室; 中国科学院大学人工智能学院; 北京人工智能研究院; AMD; Ritzz-AI",
@@ -437,7 +591,7 @@
       "pdf_filename": "2605.18800.pdf",
       "crawled_date": "2026-05-21",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.18800"
+      "pdf_url": "https://arxiv.org/pdf/2605.188"
     },
     {
       "arxiv_id": "2605.18733",
@@ -664,7 +818,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.12245"
     },
     {
-      "arxiv_id": "2605.12110",
+      "arxiv_id": "2605.1211",
       "title": "AB-Sparse: Sparse Attention with Adaptive Block Size for Accurate and Efficient Long-Context Inference",
       "authors": "Di Liu, Ruitian Wang, Chen Chen, Mingliang Gong, Yongjie Yuan, Han Zhao, Yu Feng, Quan Chen, Minyi Guo",
       "affiliations": "Shanghai Jiao Tong University; Ant Group",
@@ -675,7 +829,7 @@
       "pdf_filename": "2605.12110.pdf",
       "crawled_date": "2026-05-14",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.12110"
+      "pdf_url": "https://arxiv.org/pdf/2605.1211"
     },
     {
       "arxiv_id": "2605.11582",
@@ -1196,7 +1350,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.00649"
     },
     {
-      "arxiv_id": "2605.00640",
+      "arxiv_id": "2605.0064",
       "title": "Knowing when to trust machine-learned interatomic potentials",
       "authors": "Shams Mehdi, Ilkwon Cho, Olexandr Isayev",
       "affiliations": "Department of Chemistry, Carnegie Mellon University; Department of Materials Science and Engineering, Carnegie Mellon University",
@@ -1207,7 +1361,7 @@
       "pdf_filename": "2605.00640.pdf",
       "crawled_date": "2026-05-05",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.00640"
+      "pdf_url": "https://arxiv.org/pdf/2605.0064"
     },
     {
       "arxiv_id": "2605.00519",
@@ -1252,7 +1406,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.00421"
     },
     {
-      "arxiv_id": "2605.00420",
+      "arxiv_id": "2605.0042",
       "title": "Foresight Arena: An On-Chain Benchmark for Evaluating AI Forecasting Agents",
       "authors": "Maksym Nechepurenko, Pavel Shuvalov",
       "affiliations": "Devnull, Dubai, UAE",
@@ -1263,7 +1417,7 @@
       "pdf_filename": "2605.00420.pdf",
       "crawled_date": "2026-05-05",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.00420"
+      "pdf_url": "https://arxiv.org/pdf/2605.0042"
     },
     {
       "arxiv_id": "2605.00354",
@@ -1294,7 +1448,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.00333"
     },
     {
-      "arxiv_id": "2605.00320",
+      "arxiv_id": "2605.0032",
       "title": "VitaLLM: A Versatile and Tiny Accelerator for Mixed-Precision LLM Inference on Edge Devices",
       "authors": "Zi-Wei Lin, Tian-Sheuan Chang",
       "affiliations": "Institute of Electronics, National Yang Ming Chiao Tung University, Taiwan",
@@ -1305,10 +1459,10 @@
       "pdf_filename": "2605.00320.pdf",
       "crawled_date": "2026-05-05",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.00320"
+      "pdf_url": "https://arxiv.org/pdf/2605.0032"
     },
     {
-      "arxiv_id": "2605.00300",
+      "arxiv_id": "2605.003",
       "title": "Token Arena: A Continuous Benchmark Unifying Energy and Cognition in AI Inference",
       "authors": "Yuxuan Gao, Megan Wang, Yi Ling Yu",
       "affiliations": "University of Pennsylvania; Columbia University; OpenMesh AI",
@@ -1319,7 +1473,7 @@
       "pdf_filename": "2605.00300.pdf",
       "crawled_date": "2026-05-05",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.00300"
+      "pdf_url": "https://arxiv.org/pdf/2605.003"
     },
     {
       "arxiv_id": "2605.00237",
@@ -1364,7 +1518,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.00176"
     },
     {
-      "arxiv_id": "2605.00140",
+      "arxiv_id": "2605.0014",
       "title": "Technical Report: Activation Residual Hessian Quantization (ARHQ) for Low-Bit LLM Quantization",
       "authors": "YiFeng Wang, Zhun Sun, Keisuke Sakaguchi",
       "affiliations": "Graduate School of Information Sciences, Tohoku University",
@@ -1375,7 +1529,7 @@
       "pdf_filename": "2605.00140.pdf",
       "crawled_date": "2026-05-05",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2605.00140"
+      "pdf_url": "https://arxiv.org/pdf/2605.0014"
     },
     {
       "arxiv_id": "2605.00116",
@@ -1504,7 +1658,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.25183"
     },
     {
-      "arxiv_id": "2604.24820",
+      "arxiv_id": "2604.2482",
       "title": "Salca: A Sparsity-Aware Hardware Accelerator for Efficient Long-Context Attention Decoding",
       "authors": "Wang Fan, Wei Cao, Xi Zha, Kedi Ma, MingQian Sun, Jialin Chen, Fengzhe Zhang, Fan Zhang",
       "affiliations": "Fudan University",
@@ -1515,7 +1669,7 @@
       "pdf_filename": "2604.24820.pdf",
       "crawled_date": "2026-04-30",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.24820"
+      "pdf_url": "https://arxiv.org/pdf/2604.2482"
     },
     {
       "arxiv_id": "2604.24273",
@@ -1686,7 +1840,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.17172"
     },
     {
-      "arxiv_id": "2604.18610",
+      "arxiv_id": "2604.1861",
       "title": "SpikeMLLM: Spike-based Multimodal Large Language Models via Modality-Specific Temporal Scales and Temporal Compression",
       "authors": "Han Xu, Zhiyong Qin, Di Shang, Jiahong Zhang, Xuerui Qiu, Bo Lei, Tiejun Huang, Bo Xu, Guoqi Li",
       "affiliations": "Institute of Automation, Chinese Academy of Sciences; University of Chinese Academy of Sciences; Beijing Academy of Artificial Intelligence; Zhongguancun Academy; Peking University; Key Laboratory of Brain Cognition and Brain-inspired Intelligence Technology; Spiking Intelligence Lab",
@@ -1697,10 +1851,10 @@
       "pdf_filename": "2604.18610.pdf",
       "crawled_date": "2026-04-23",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.18610"
+      "pdf_url": "https://arxiv.org/pdf/2604.1861"
     },
     {
-      "arxiv_id": "2604.19790",
+      "arxiv_id": "2604.1979",
       "title": "Hidden Reliability Risks in Large Language Models: Systematic Identification of Precision-Induced Output Disagreements",
       "authors": "Yifei Wang, Tianlin Li, Xiaohan Zhang, Xiaoyu Zhang, Wei Ma, Mingfei Cheng, Li Pan",
       "affiliations": "Shanghai Jiao Tong University; Beihang University; Nanyang Technological University; Singapore Management University",
@@ -1711,7 +1865,7 @@
       "pdf_filename": "2604.19790.pdf",
       "crawled_date": "2026-04-23",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.19790"
+      "pdf_url": "https://arxiv.org/pdf/2604.1979"
     },
     {
       "arxiv_id": "2604.18566",
@@ -1784,7 +1938,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.17041"
     },
     {
-      "arxiv_id": "2604.16940",
+      "arxiv_id": "2604.1694",
       "title": "D-QRELO: Training- and Data-Free Delta Compression for Large Language Models via Quantization and Residual Low-Rank Approximation",
       "authors": "Junlin Li, Shuangyong Song, Guodong Du, Ngai Wong, Xuebo Liu, Yongxiang Li, Min Zhang, Jing Li, Xuelong Li",
       "affiliations": "Harbin Institute of Technology, Shenzhen; TeleAI of China Telecom; The Hong Kong Polytechnic University; The University of Hong Kong",
@@ -1795,7 +1949,7 @@
       "pdf_filename": "2604.16940.pdf",
       "crawled_date": "2026-04-21",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.16940"
+      "pdf_url": "https://arxiv.org/pdf/2604.1694"
     },
     {
       "arxiv_id": "2604.15794",
@@ -1882,7 +2036,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.13806"
     },
     {
-      "arxiv_id": "2604.13440",
+      "arxiv_id": "2604.1344",
       "title": "A KL Lens on Quantization: Fast, Forward-Only Sensitivity for Mixed-Precision SSM-Transformer Models",
       "authors": "Jason Kong, Nilesh Prasad Pandey, Flavio Ponzina, Tajana Rosing",
       "affiliations": "University of California San Diego (UCSD); San Diego State University (SDSU)",
@@ -1893,7 +2047,7 @@
       "pdf_filename": "2604.13440.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.13440"
+      "pdf_url": "https://arxiv.org/pdf/2604.1344"
     },
     {
       "arxiv_id": "2604.12782",
@@ -2106,7 +2260,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.26434"
     },
     {
-      "arxiv_id": "2603.26110",
+      "arxiv_id": "2603.2611",
       "title": "TurboESM: Ultra-Efficient 3-Bit KV Cache Quantization for Protein Language Models with Orthogonal Rotation and QJL Correction",
       "authors": "Yue Hu, Junqing Wang, Yingchao Liu",
       "affiliations": "Qilu University of Technology (Shandong Academy of Sciences); Shandong First Medical University",
@@ -2117,7 +2271,7 @@
       "pdf_filename": "2603.26110.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.26110"
+      "pdf_url": "https://arxiv.org/pdf/2603.2611"
     },
     {
       "arxiv_id": "2603.25526",
@@ -2246,7 +2400,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.23575"
     },
     {
-      "arxiv_id": "2603.22370",
+      "arxiv_id": "2603.2237",
       "title": "FAAR: Format-Aware Adaptive Rounding for NVFP4",
       "authors": "Hanglin Li, Shuchang Tian, Chen Lin, Zhiyong Zhao, Kun Zhan",
       "affiliations": "Li Auto Inc.",
@@ -2257,7 +2411,7 @@
       "pdf_filename": "2603.22370.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.22370"
+      "pdf_url": "https://arxiv.org/pdf/2603.2237"
     },
     {
       "arxiv_id": "2603.21418",
@@ -2274,7 +2428,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.21418"
     },
     {
-      "arxiv_id": "2603.21280",
+      "arxiv_id": "2603.2128",
       "title": "WARBENCH: A Comprehensive Benchmark for Evaluating LLMs in Military Decision-Making",
       "authors": "Zongjie Li, Chaozheng Wang, Yuchong Xie, Pingchuan Ma, Shuai Wang",
       "affiliations": "Hong Kong University of Science and Technology; Chinese University of Hong Kong; Zhejiang University of Technology",
@@ -2285,10 +2439,10 @@
       "pdf_filename": "2603.21280.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.21280"
+      "pdf_url": "https://arxiv.org/pdf/2603.2128"
     },
     {
-      "arxiv_id": "2604.02360",
+      "arxiv_id": "2604.0236",
       "title": "Fighting AI with AI: AI-Agent Augmented DNS Blocking of LLM Services during Student Evaluations",
       "authors": "Yonas Kassa, James Bonacci, Ping Wang",
       "affiliations": "School of Data Intelligence and Technology, Robert Morris University",
@@ -2299,7 +2453,7 @@
       "pdf_filename": "2604.02360.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.02360"
+      "pdf_url": "https://arxiv.org/pdf/2604.0236"
     },
     {
       "arxiv_id": "2603.20538",
@@ -2456,7 +2610,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.17052"
     },
     {
-      "arxiv_id": "2603.16590",
+      "arxiv_id": "2603.1659",
       "title": "BATQuant: Outlier-resilient MXFP4 Quantization via Learnable Block-wise Optimization",
       "authors": "Ji-Fu Li, Manyi Zhang, Xiaobo Xia, Han Bao, Haoli Bai, Zhenhua Dong, Xianzhi Yu",
       "affiliations": "Huawei Technologies; University of Science and Technology of China",
@@ -2467,10 +2621,10 @@
       "pdf_filename": "2603.16590.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.16590"
+      "pdf_url": "https://arxiv.org/pdf/2603.1659"
     },
     {
-      "arxiv_id": "2603.16440",
+      "arxiv_id": "2603.1644",
       "title": "Capability-Guided Compression: Toward Interpretability-Aware Budget Allocation for Large Language Models",
       "authors": "Rishaank Gupta",
       "affiliations": "Independent Researcher",
@@ -2481,7 +2635,7 @@
       "pdf_filename": "2603.16440.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.16440"
+      "pdf_url": "https://arxiv.org/pdf/2603.1644"
     },
     {
       "arxiv_id": "2603.16435",
@@ -2554,7 +2708,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.13765"
     },
     {
-      "arxiv_id": "2603.20260",
+      "arxiv_id": "2603.2026",
       "title": "ProMAS: Proactive Error Forecasting for Multi-Agent Systems Using Markov Transition Dynamics",
       "authors": "Xinkui Zhao, Sai Liu, Yifan Zhang, Qingyu Ma, Guanjie Cheng, Naibo Wang, Chang Liu",
       "affiliations": "Zhejiang University",
@@ -2565,7 +2719,7 @@
       "pdf_filename": "2603.20260.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.20260"
+      "pdf_url": "https://arxiv.org/pdf/2603.2026"
     },
     {
       "arxiv_id": "2603.12108",
@@ -2722,7 +2876,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.05168"
     },
     {
-      "arxiv_id": "2603.04800",
+      "arxiv_id": "2603.048",
       "title": "MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models",
       "authors": "Lulu Hu, Wenhu Xiao, Xin Chen, Xinhua Xu, Bowen Xu, Kun Li, Yongliang Tao",
       "affiliations": "Alibaba Cloud Computing, Alibaba Group",
@@ -2733,7 +2887,7 @@
       "pdf_filename": "2603.04800.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2603.04800"
+      "pdf_url": "https://arxiv.org/pdf/2603.048"
     },
     {
       "arxiv_id": "2603.04707",
@@ -2904,7 +3058,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.08741"
     },
     {
-      "arxiv_id": "2602.23200",
+      "arxiv_id": "2602.232",
       "title": "InnerQ: Hardware-aware Tuning-free Quantization of KV Cache for Large Language Models",
       "authors": "Sayed Mohammadreza Tayaranian Hosseini, Amir Ardakani, Warren J. Gross",
       "affiliations": "Department of Electrical and Computer Engineering, McGill University, Montreal, QC, Canada",
@@ -2915,10 +3069,10 @@
       "pdf_filename": "2602.23200.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.23200"
+      "pdf_url": "https://arxiv.org/pdf/2602.232"
     },
     {
-      "arxiv_id": "2602.22700",
+      "arxiv_id": "2602.227",
       "title": "IMMACULATE: A Practical LLM Auditing Framework via Verifiable Computation",
       "authors": "Yanpei Guo, Wenjie Qu, Linyu Wu, Shengfang Zhai, Lionel Z. Wang, Ming Xu, Yue Liu, Binhang Yuan, Dawn Song, Jiaheng Zhang",
       "affiliations": "National University of Singapore; Nanyang Technological University; Independent Researcher; University of California, Berkeley",
@@ -2929,7 +3083,7 @@
       "pdf_filename": "2602.22700.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.22700"
+      "pdf_url": "https://arxiv.org/pdf/2602.227"
     },
     {
       "arxiv_id": "2602.22592",
@@ -2946,7 +3100,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.22592"
     },
     {
-      "arxiv_id": "2602.21600",
+      "arxiv_id": "2602.216",
       "title": "AQR-HNSW: Accelerating Approximate Nearest Neighbor Search via Density-aware Quantization and Multi-stage Re-ranking",
       "authors": "Ganap Ashit Tewary, Nrusinga Charan Gantayat, Jeff Zhang",
       "affiliations": "Arizona State University",
@@ -2957,7 +3111,7 @@
       "pdf_filename": "2602.21600.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.21600"
+      "pdf_url": "https://arxiv.org/pdf/2602.216"
     },
     {
       "arxiv_id": "2602.21461",
@@ -3058,7 +3212,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.20191"
     },
     {
-      "arxiv_id": "2602.18420",
+      "arxiv_id": "2602.1842",
       "title": "SPQ: An Ensemble Technique for Large Language Model Compression",
       "authors": "Jiamin Yao, Eren Gultepe",
       "affiliations": "Department of Computer Science, Southern Illinois University Edwardsville, Edwardsville, USA",
@@ -3069,7 +3223,7 @@
       "pdf_filename": "2602.18420.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.18420"
+      "pdf_url": "https://arxiv.org/pdf/2602.1842"
     },
     {
       "arxiv_id": "2603.08727",
@@ -3086,7 +3240,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.08727"
     },
     {
-      "arxiv_id": "2602.16640",
+      "arxiv_id": "2602.1664",
       "title": "Quecto-V1: Empirical Analysis of 8-bit Quantized Small Language Models for On-Device Legal Retrieval",
       "authors": "Subrit Dikshit",
       "affiliations": "Department of Computer Science and Engineering, Indian Institute of Information Technology, Pune, India; Director of AI & Data Science, Compunnel Inc.",
@@ -3097,7 +3251,7 @@
       "pdf_filename": "2602.16640.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.16640"
+      "pdf_url": "https://arxiv.org/pdf/2602.1664"
     },
     {
       "arxiv_id": "2602.15382",
@@ -3156,7 +3310,7 @@
       "pdf_url": "https://arxiv.org/pdf/2603.03339"
     },
     {
-      "arxiv_id": "2602.13710",
+      "arxiv_id": "2602.1371",
       "title": "HBVLA: Pushing 1-Bit Post-Training Quantization for Vision-Language-Action Models",
       "authors": "Xin Yan, Zhenglin Wan, Feiyang Ye, Xingrui Yu, Hangyu Du, Yang You, Ivor Tsang",
       "affiliations": "School of Artificial Intelligence, Beijing Normal University, Beijing, China; Department of Computer Science, National University of Singapore, Singapore; Centre for Frontier AI Research, Agency for Science, Technology and Research (A*STAR), Singapore; College of Design and Engineering, National University of Singapore, Singapore",
@@ -3167,7 +3321,7 @@
       "pdf_filename": "2602.13710.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.13710"
+      "pdf_url": "https://arxiv.org/pdf/2602.1371"
     },
     {
       "arxiv_id": "2602.13628",
@@ -3226,7 +3380,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.12878"
     },
     {
-      "arxiv_id": "2602.12370",
+      "arxiv_id": "2602.1237",
       "title": "LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens",
       "authors": "Zekun Li, Sizhe An, Chengcheng Tang, Chuan Guo, Ivan Shugurov, Linguang Zhang, Amy Zhao, Srinath Sridhar, Lingling Tao, Abhay Mittal",
       "affiliations": "Brown University; Meta",
@@ -3237,7 +3391,7 @@
       "pdf_filename": "2602.12370.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.12370"
+      "pdf_url": "https://arxiv.org/pdf/2602.1237"
     },
     {
       "arxiv_id": "2602.11513",
@@ -3338,7 +3492,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.09323"
     },
     {
-      "arxiv_id": "2602.09130",
+      "arxiv_id": "2602.0913",
       "title": "UniComp: A Unified Evaluation of Large Language Model Compression via Pruning, Quantization and Distillation",
       "authors": "Jonathan von Rad, Yong Cao, Andreas Geiger",
       "affiliations": "University College London; University of Tübingen",
@@ -3349,7 +3503,7 @@
       "pdf_filename": "2602.09130.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.09130"
+      "pdf_url": "https://arxiv.org/pdf/2602.0913"
     },
     {
       "arxiv_id": "2602.08817",
@@ -3366,7 +3520,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.08817"
     },
     {
-      "arxiv_id": "2602.08600",
+      "arxiv_id": "2602.086",
       "title": "Beyond Scalar Scores: Reinforcement Learning for Error-Aware Quality Estimation of Machine Translation",
       "authors": "Archchana Sindhujan, Girish A. Koushik, Shenbin Qian, Diptesh Kanojia, Constantin Orăsan",
       "affiliations": "Institute for People-Centred AI, University of Surrey, UK; NICE Research Group, University of Surrey, UK; Department of Informatics, University of Oslo, Norway; Centre for Translation Studies, University of Surrey, UK",
@@ -3377,7 +3531,7 @@
       "pdf_filename": "2602.08600.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.08600"
+      "pdf_url": "https://arxiv.org/pdf/2602.086"
     },
     {
       "arxiv_id": "2602.08376",
@@ -3646,7 +3800,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.04565"
     },
     {
-      "arxiv_id": "2602.04460",
+      "arxiv_id": "2602.0446",
       "title": "DOS: Dual-Flow Orthogonal Semantic IDs for Recommendation in Meituan",
       "authors": "Junwei Yin, Senjie Kou, Changhao Li, Shuli Wang, Xue Wei, Yinqiu Huang, Yinhua Zhu, Haitao Wang, Xingxing Wang",
       "affiliations": "Meituan",
@@ -3657,7 +3811,7 @@
       "pdf_filename": "2602.04460.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.04460"
+      "pdf_url": "https://arxiv.org/pdf/2602.0446"
     },
     {
       "arxiv_id": "2602.04163",
@@ -3716,7 +3870,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.03533"
     },
     {
-      "arxiv_id": "2602.03120",
+      "arxiv_id": "2602.0312",
       "title": "Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost",
       "authors": "Yinggan Xu, Risto Miikkulainen, Xin Qiu",
       "affiliations": "University of California, Los Angeles, Los Angeles CA, USA; Cognizant AI Lab, San Francisco CA, USA; The University of Texas at Austin, Austin TX, USA",
@@ -3727,7 +3881,7 @@
       "pdf_filename": "2602.03120.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.03120"
+      "pdf_url": "https://arxiv.org/pdf/2602.0312"
     },
     {
       "arxiv_id": "2602.02726",
@@ -3814,7 +3968,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.01613"
     },
     {
-      "arxiv_id": "2602.01410",
+      "arxiv_id": "2602.0141",
       "title": "SNIP: An Adaptive Mixed Precision Framework for Subbyte Large Language Model Training",
       "authors": "Yunjie Pan, Yongyi Yang, Hanmei Yang, Scott Mahlke",
       "affiliations": "University of Michigan; NTT Research, Inc.; University of Massachusetts Amherst",
@@ -3825,7 +3979,7 @@
       "pdf_filename": "2602.01410.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2602.01410"
+      "pdf_url": "https://arxiv.org/pdf/2602.0141"
     },
     {
       "arxiv_id": "2602.01027",
@@ -4192,7 +4346,7 @@
       "pdf_url": "https://arxiv.org/pdf/2601.18306"
     },
     {
-      "arxiv_id": "2601.18150",
+      "arxiv_id": "2601.1815",
       "title": "FP8-RL: A Practical and Stable Low-Precision Stack for LLM Reinforcement Learning",
       "authors": "Zhaopeng Qiu, Shuang Yu, Jingqi Zhang, Shuai Zhang, Xue Huang, Jingyi Yang, Junjie Lai",
       "affiliations": "NVIDIA, Beijing, China",
@@ -4203,7 +4357,7 @@
       "pdf_filename": "2601.18150.pdf",
       "crawled_date": "2026-04-16",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2601.18150"
+      "pdf_url": "https://arxiv.org/pdf/2601.1815"
     },
     {
       "arxiv_id": "2601.17364",
@@ -4416,7 +4570,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.11465"
     },
     {
-      "arxiv_id": "2604.11080",
+      "arxiv_id": "2604.1108",
       "title": "ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation",
       "authors": "Suyoung Kim, Sunghyun Wee, Hyeonjin Kim, Kyomin Hwang, Hyunho Lee, Nojun Kwak",
       "affiliations": "Seoul National University; LG AI Research",
@@ -4427,7 +4581,7 @@
       "pdf_filename": "2604.11080.pdf",
       "crawled_date": "2026-04-15",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.11080"
+      "pdf_url": "https://arxiv.org/pdf/2604.1108"
     },
     {
       "arxiv_id": "2604.10496",
@@ -4458,7 +4612,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.10091"
     },
     {
-      "arxiv_id": "2604.09970",
+      "arxiv_id": "2604.0997",
       "title": "LoDAdaC: a unified local training-based decentralized framework with adaptive gradients and compressed communication",
       "authors": "Wei Liu, Anweshit Panda, Ujwal Pandey, Haven Cook, George M. Slota, Naigang Wang, Jie Chen, Yangyang Xu",
       "affiliations": "Rensselaer Polytechnic Institute; IBM T. J. Watson Research Center; MIT-IBM Watson AI Lab, IBM Research",
@@ -4469,7 +4623,7 @@
       "pdf_filename": "2604.09970.pdf",
       "crawled_date": "2026-04-15",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.09970"
+      "pdf_url": "https://arxiv.org/pdf/2604.0997"
     },
     {
       "arxiv_id": "2604.09512",
