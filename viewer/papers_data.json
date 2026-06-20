@@ -1,10 +1,38 @@
 {
-  "count": 391,
+  "count": 393,
   "crawled_date_min": "2026-04-15",
-  "crawled_date_max": "2026-06-19",
+  "crawled_date_max": "2026-06-20",
   "published_date_min": "2026-01-16",
   "published_date_max": "2026/06/03",
   "papers": [
+    {
+      "arxiv_id": "2606.20254",
+      "title": "Quantization as a Malicious Task: Removing Quantization-Conditioned Backdoors via Task Arithmetic",
+      "authors": "Kaihsun Yang, Min-Yan Tsai, Chia-Mu Yu",
+      "affiliations": "National Yang Ming Chiao Tung University",
+      "published_date": "2026-06-18",
+      "categories": "cs.CR",
+      "abstract": "Model quantization is widely adopted to reduce memory usage and inference cost when deploying deep neural networks on resource-constrained devices. However, recent studies have revealed a new security threat known as Quantization-Conditioned Backdoors (QCBs), where a model behaves normally in full precision but activates malicious behavior only after quantization. Existing defenses typically modify quantization procedures or correct activation statistics, often introducing additional computational overhead or relying on specific quantization settings. Here, we present QVec, a parameter-space perspective for defending against QCBs. We observe that the weight difference between a full-precision model and its quantized counterpart encodes a structured behavioral shift, which can be interpreted as a malicious task vector rather than random quantization noise. Based on this insight, QVec counteracts this malicious direction through controlled parameter correction prior to deployment. QVec requires no retraining, no trigger samples, and only a single quantization pass to estimate the parameter shift, together with a lightweight hyperparameter search. Extensive experiments across image classification benchmarks and multiple Large Language Model (LLM) attack scenarios demonstrate that QVec consistently suppresses backdoor activation while preserving clean performance.",
+      "summary_cn": "针对量化条件后门（QCB）攻击——模型全精度下正常但量化后激发恶意行为——提出QVec方法。基于全精度与量化模型间权重差编码结构行为偏移的观察，将其视为恶意任务向量而非量化噪声，在部署前通过参数校正抵消该方向。无需重训练或触发器样本，仅需一次量化估计。实验表明在图像分类和LLM攻击场景中稳定抑制后门并保持正常性能。",
+      "pdf_filename": "2606.20254.pdf",
+      "crawled_date": "2026-06-20",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.20254"
+    },
+    {
+      "arxiv_id": "2606.19528",
+      "title": "Techniques for Peak Memory Reduction for LoRA Fine-tuning of LLMs on Edge Devices",
+      "authors": "Hassan Dbouk, Matthias Reisser, Prathamesh Mandke, Likhita Arun Navali, Christos Louizos",
+      "affiliations": "Qualcomm AI Research, Qualcomm Technologies, Inc.",
+      "published_date": "2026-06-17",
+      "categories": "cs.LG, cs.AI",
+      "abstract": "Fine-tuning of Large Language Models (LLMs) using Low-Rank Adaptation (LoRA) on an end-user's data offers personalized experiences while keeping data private, but faces severe memory constraints on consumer hardware. Peak memory during fine-tuning often exceeds device limits, especially for models with billions of parameters and long-context training data. This paper introduces a suite of complementary techniques to reduce memory footprint without sacrificing model quality: (1) base model quantization with on-the-fly dequantization, (2) memory-efficient checkpointing combining selective activation caching and disk offloading, (3) softmax approximation using semantically relevant token subsets, and (4) logits masking. Experiments on Llama-3.2 3B and Qwen-2.5 3B demonstrate up to $26\\times$ and $28\\times$ reduction in peak memory, enabling fine-tuning on resource-constrained devices.",
+      "summary_cn": "针对边缘设备LoRA微调大语言模型的显存瓶颈，提出量化与运行时反量化、选择性激活缓存与磁盘卸载的检查点、基于语义子集的softmax近似及logits掩码等互补技术。在Llama-3.2 3B和Qwen-2.5 3B上，峰值显存最高降低26倍和28倍，2048 token上下文仅需约1 GB，使边缘设备上的隐私保护个性化微调成为可能。",
+      "pdf_filename": "2606.19528.pdf",
+      "crawled_date": "2026-06-20",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2606.19528"
+    },
     {
       "arxiv_id": "2606.18851",
       "title": "From Tokens to Energy Flexibility: Quantization-Enabled Demand Response for Data Centers with LLM Inference Workloads",
