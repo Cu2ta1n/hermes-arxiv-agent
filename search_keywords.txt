@@ -1,1 +1,1 @@
-(all:robotic+AND+all:grasping)+OR+(all:dexterous+AND+all:manipulation)+OR+(all:tactile+AND+all:sensing)+OR+(all:embodied+AND+all:ai)+OR+(all:world+AND+all:model)+OR+all:vision-language-action+OR+all:moire
+(all:robotic+AND+all:grasping)+OR+(all:dexterous+AND+all:manipulation)+OR+(all:vision-language-action)+OR+(all:vision-language+AND+all:action)+OR+(all:world+AND+all:model+AND+all:robot)+OR+(all:embodied+AND+all:robotics)+OR+(all:manipulation+AND+all:robot)+OR+(all:contact-rich+AND+all:manipulation)
